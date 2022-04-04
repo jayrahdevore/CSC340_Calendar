@@ -26,11 +26,6 @@ namespace CalendarGroupProject
             coordinateMeetingPanel.Visible = false;
         }
 
-        private void mondayLabel_Click(object sender, EventArgs e)
-        {
-            //ACCIDENTALLY DOUBLE CLICKED A RANDOM LABEL, IGNORE THIS!
-        }
-
         //Exit button to close the application from any panel
         private void exitButton_Click(object sender, EventArgs e)
         {
