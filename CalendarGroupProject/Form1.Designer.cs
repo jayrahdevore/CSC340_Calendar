@@ -110,6 +110,8 @@ namespace CalendarGroupProject
             this.tuesdayLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.addEventPanel = new System.Windows.Forms.Panel();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.label51 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label34 = new System.Windows.Forms.Label();
             this.backButtonAddEvent = new System.Windows.Forms.Button();
@@ -122,49 +124,47 @@ namespace CalendarGroupProject
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.viewMonthlyEventPanel = new System.Windows.Forms.Panel();
-            this.monthlyEventListLabel = new System.Windows.Forms.Label();
-            this.monthlyEventListComboBox1 = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.monthlyEventListTextBox = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.monthlyEventListListBox = new System.Windows.Forms.ListBox();
             this.monthlyEventListBackButton = new System.Windows.Forms.Button();
+            this.monthlyEventListListBox = new System.Windows.Forms.ListBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.monthlyEventListTextBox = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.monthlyEventListComboBox1 = new System.Windows.Forms.ComboBox();
+            this.monthlyEventListLabel = new System.Windows.Forms.Label();
             this.eventOptionsPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.viewEventPanel = new System.Windows.Forms.Panel();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.listBox36 = new System.Windows.Forms.ListBox();
-            this.listBox37 = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.viewEventPanel = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listBox37 = new System.Windows.Forms.ListBox();
+            this.listBox36 = new System.Windows.Forms.ListBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.editEventPanel = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.label51 = new System.Windows.Forms.Label();
             this.coordinateMeetingPanel = new System.Windows.Forms.Panel();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.label52 = new System.Windows.Forms.Label();
@@ -209,10 +209,9 @@ namespace CalendarGroupProject
             this.mondayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.mondayLabel.Location = new System.Drawing.Point(115, 52);
             this.mondayLabel.Name = "mondayLabel";
-            this.mondayLabel.Size = new System.Drawing.Size(58, 16);
+            this.mondayLabel.Size = new System.Drawing.Size(57, 16);
             this.mondayLabel.TabIndex = 4;
             this.mondayLabel.Text = "Monday";
-            this.mondayLabel.Click += new System.EventHandler(this.mondayLabel_Click);
             // 
             // calendarPanel
             // 
@@ -319,7 +318,7 @@ namespace CalendarGroupProject
             "November",
             "December"});
             this.monthSelect.Location = new System.Drawing.Point(502, 9);
-            this.monthSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.monthSelect.Margin = new System.Windows.Forms.Padding(2);
             this.monthSelect.Name = "monthSelect";
             this.monthSelect.Size = new System.Drawing.Size(174, 32);
             this.monthSelect.TabIndex = 109;
@@ -1124,7 +1123,7 @@ namespace CalendarGroupProject
             this.sundayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.sundayLabel.Location = new System.Drawing.Point(1012, 52);
             this.sundayLabel.Name = "sundayLabel";
-            this.sundayLabel.Size = new System.Drawing.Size(56, 16);
+            this.sundayLabel.Size = new System.Drawing.Size(55, 16);
             this.sundayLabel.TabIndex = 10;
             this.sundayLabel.Text = "Sunday";
             // 
@@ -1135,7 +1134,7 @@ namespace CalendarGroupProject
             this.saturdayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.saturdayLabel.Location = new System.Drawing.Point(858, 52);
             this.saturdayLabel.Name = "saturdayLabel";
-            this.saturdayLabel.Size = new System.Drawing.Size(65, 16);
+            this.saturdayLabel.Size = new System.Drawing.Size(64, 16);
             this.saturdayLabel.TabIndex = 9;
             this.saturdayLabel.Text = "Saturday";
             // 
@@ -1146,7 +1145,7 @@ namespace CalendarGroupProject
             this.fridayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.fridayLabel.Location = new System.Drawing.Point(718, 52);
             this.fridayLabel.Name = "fridayLabel";
-            this.fridayLabel.Size = new System.Drawing.Size(48, 16);
+            this.fridayLabel.Size = new System.Drawing.Size(47, 16);
             this.fridayLabel.TabIndex = 8;
             this.fridayLabel.Text = "Friday";
             // 
@@ -1157,7 +1156,7 @@ namespace CalendarGroupProject
             this.thursdayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.thursdayLabel.Location = new System.Drawing.Point(557, 52);
             this.thursdayLabel.Name = "thursdayLabel";
-            this.thursdayLabel.Size = new System.Drawing.Size(66, 16);
+            this.thursdayLabel.Size = new System.Drawing.Size(65, 16);
             this.thursdayLabel.TabIndex = 7;
             this.thursdayLabel.Text = "Thursday";
             // 
@@ -1168,7 +1167,7 @@ namespace CalendarGroupProject
             this.wednesdayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.wednesdayLabel.Location = new System.Drawing.Point(401, 52);
             this.wednesdayLabel.Name = "wednesdayLabel";
-            this.wednesdayLabel.Size = new System.Drawing.Size(82, 16);
+            this.wednesdayLabel.Size = new System.Drawing.Size(81, 16);
             this.wednesdayLabel.TabIndex = 6;
             this.wednesdayLabel.Text = "Wednesday";
             // 
@@ -1179,7 +1178,7 @@ namespace CalendarGroupProject
             this.tuesdayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.tuesdayLabel.Location = new System.Drawing.Point(262, 52);
             this.tuesdayLabel.Name = "tuesdayLabel";
-            this.tuesdayLabel.Size = new System.Drawing.Size(60, 16);
+            this.tuesdayLabel.Size = new System.Drawing.Size(59, 16);
             this.tuesdayLabel.TabIndex = 5;
             this.tuesdayLabel.Text = "Tuesday";
             // 
@@ -1212,10 +1211,35 @@ namespace CalendarGroupProject
             this.addEventPanel.Controls.Add(this.label33);
             this.addEventPanel.Controls.Add(this.label32);
             this.addEventPanel.Location = new System.Drawing.Point(12, 71);
-            this.addEventPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addEventPanel.Margin = new System.Windows.Forms.Padding(2);
             this.addEventPanel.Name = "addEventPanel";
             this.addEventPanel.Size = new System.Drawing.Size(1160, 669);
             this.addEventPanel.TabIndex = 6;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker4.CalendarForeColor = System.Drawing.Color.DarkTurquoise;
+            this.dateTimePicker4.CalendarTitleForeColor = System.Drawing.Color.DarkTurquoise;
+            this.dateTimePicker4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker4.Location = new System.Drawing.Point(528, 155);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(112, 23);
+            this.dateTimePicker4.TabIndex = 18;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label51.Location = new System.Drawing.Point(463, 157);
+            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(52, 19);
+            this.label51.TabIndex = 17;
+            this.label51.Text = "Time:";
             // 
             // dateTimePicker1
             // 
@@ -1225,7 +1249,7 @@ namespace CalendarGroupProject
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(528, 123);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(112, 23);
             this.dateTimePicker1.TabIndex = 16;
@@ -1248,7 +1272,7 @@ namespace CalendarGroupProject
             this.backButtonAddEvent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.backButtonAddEvent.ForeColor = System.Drawing.Color.White;
             this.backButtonAddEvent.Location = new System.Drawing.Point(398, 89);
-            this.backButtonAddEvent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backButtonAddEvent.Margin = new System.Windows.Forms.Padding(2);
             this.backButtonAddEvent.Name = "backButtonAddEvent";
             this.backButtonAddEvent.Size = new System.Drawing.Size(61, 30);
             this.backButtonAddEvent.TabIndex = 14;
@@ -1262,7 +1286,7 @@ namespace CalendarGroupProject
             this.buttonAddEvent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.buttonAddEvent.ForeColor = System.Drawing.Color.White;
             this.buttonAddEvent.Location = new System.Drawing.Point(466, 520);
-            this.buttonAddEvent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddEvent.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddEvent.Name = "buttonAddEvent";
             this.buttonAddEvent.Size = new System.Drawing.Size(110, 37);
             this.buttonAddEvent.TabIndex = 13;
@@ -1273,7 +1297,7 @@ namespace CalendarGroupProject
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(465, 379);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(243, 133);
@@ -1282,7 +1306,7 @@ namespace CalendarGroupProject
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(465, 217);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(243, 133);
@@ -1291,7 +1315,7 @@ namespace CalendarGroupProject
             // textBoxAddTitle
             // 
             this.textBoxAddTitle.Location = new System.Drawing.Point(573, 89);
-            this.textBoxAddTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAddTitle.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAddTitle.Name = "textBoxAddTitle";
             this.textBoxAddTitle.Size = new System.Drawing.Size(136, 20);
             this.textBoxAddTitle.TabIndex = 7;
@@ -1340,7 +1364,7 @@ namespace CalendarGroupProject
             this.label32.Location = new System.Drawing.Point(497, 22);
             this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(187, 32);
+            this.label32.Size = new System.Drawing.Size(186, 32);
             this.label32.TabIndex = 0;
             this.label32.Text = "Event Details";
             // 
@@ -1359,16 +1383,68 @@ namespace CalendarGroupProject
             this.viewMonthlyEventPanel.Size = new System.Drawing.Size(1160, 669);
             this.viewMonthlyEventPanel.TabIndex = 47;
             // 
-            // monthlyEventListLabel
+            // monthlyEventListBackButton
             // 
-            this.monthlyEventListLabel.AutoSize = true;
-            this.monthlyEventListLabel.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.monthlyEventListLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.monthlyEventListLabel.Location = new System.Drawing.Point(460, 20);
-            this.monthlyEventListLabel.Name = "monthlyEventListLabel";
-            this.monthlyEventListLabel.Size = new System.Drawing.Size(258, 32);
-            this.monthlyEventListLabel.TabIndex = 0;
-            this.monthlyEventListLabel.Text = "Monthly Event List";
+            this.monthlyEventListBackButton.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.monthlyEventListBackButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.monthlyEventListBackButton.ForeColor = System.Drawing.Color.White;
+            this.monthlyEventListBackButton.Location = new System.Drawing.Point(418, 85);
+            this.monthlyEventListBackButton.Margin = new System.Windows.Forms.Padding(2);
+            this.monthlyEventListBackButton.Name = "monthlyEventListBackButton";
+            this.monthlyEventListBackButton.Size = new System.Drawing.Size(61, 30);
+            this.monthlyEventListBackButton.TabIndex = 15;
+            this.monthlyEventListBackButton.Text = "Back";
+            this.monthlyEventListBackButton.UseVisualStyleBackColor = false;
+            this.monthlyEventListBackButton.Click += new System.EventHandler(this.monthlyEventListBackButton_Click);
+            // 
+            // monthlyEventListListBox
+            // 
+            this.monthlyEventListListBox.FormattingEnabled = true;
+            this.monthlyEventListListBox.Location = new System.Drawing.Point(488, 196);
+            this.monthlyEventListListBox.Name = "monthlyEventListListBox";
+            this.monthlyEventListListBox.Size = new System.Drawing.Size(203, 368);
+            this.monthlyEventListListBox.TabIndex = 7;
+            this.monthlyEventListListBox.SelectedIndexChanged += new System.EventHandler(this.monthlyEventListListBox_SelectedIndexChanged);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label39.Location = new System.Drawing.Point(484, 174);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(91, 19);
+            this.label39.TabIndex = 6;
+            this.label39.Text = "Event List:";
+            // 
+            // monthlyEventListTextBox
+            // 
+            this.monthlyEventListTextBox.Location = new System.Drawing.Point(570, 114);
+            this.monthlyEventListTextBox.Name = "monthlyEventListTextBox";
+            this.monthlyEventListTextBox.Size = new System.Drawing.Size(121, 20);
+            this.monthlyEventListTextBox.TabIndex = 5;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label36.Location = new System.Drawing.Point(484, 116);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(48, 19);
+            this.label36.TabIndex = 4;
+            this.label36.Text = "Year:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label35.Location = new System.Drawing.Point(484, 85);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(63, 19);
+            this.label35.TabIndex = 2;
+            this.label35.Text = "Month:";
             // 
             // monthlyEventListComboBox1
             // 
@@ -1391,68 +1467,16 @@ namespace CalendarGroupProject
             this.monthlyEventListComboBox1.Size = new System.Drawing.Size(121, 21);
             this.monthlyEventListComboBox1.TabIndex = 1;
             // 
-            // label35
+            // monthlyEventListLabel
             // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label35.Location = new System.Drawing.Point(484, 85);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(63, 19);
-            this.label35.TabIndex = 2;
-            this.label35.Text = "Month:";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label36.Location = new System.Drawing.Point(484, 116);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(48, 19);
-            this.label36.TabIndex = 4;
-            this.label36.Text = "Year:";
-            // 
-            // monthlyEventListTextBox
-            // 
-            this.monthlyEventListTextBox.Location = new System.Drawing.Point(570, 114);
-            this.monthlyEventListTextBox.Name = "monthlyEventListTextBox";
-            this.monthlyEventListTextBox.Size = new System.Drawing.Size(121, 20);
-            this.monthlyEventListTextBox.TabIndex = 5;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label39.Location = new System.Drawing.Point(484, 174);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(91, 19);
-            this.label39.TabIndex = 6;
-            this.label39.Text = "Event List:";
-            // 
-            // monthlyEventListListBox
-            // 
-            this.monthlyEventListListBox.FormattingEnabled = true;
-            this.monthlyEventListListBox.Location = new System.Drawing.Point(488, 196);
-            this.monthlyEventListListBox.Name = "monthlyEventListListBox";
-            this.monthlyEventListListBox.Size = new System.Drawing.Size(203, 368);
-            this.monthlyEventListListBox.TabIndex = 7;
-            this.monthlyEventListListBox.SelectedIndexChanged += new System.EventHandler(this.monthlyEventListListBox_SelectedIndexChanged);
-            // 
-            // monthlyEventListBackButton
-            // 
-            this.monthlyEventListBackButton.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.monthlyEventListBackButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.monthlyEventListBackButton.ForeColor = System.Drawing.Color.White;
-            this.monthlyEventListBackButton.Location = new System.Drawing.Point(418, 85);
-            this.monthlyEventListBackButton.Margin = new System.Windows.Forms.Padding(2);
-            this.monthlyEventListBackButton.Name = "monthlyEventListBackButton";
-            this.monthlyEventListBackButton.Size = new System.Drawing.Size(61, 30);
-            this.monthlyEventListBackButton.TabIndex = 15;
-            this.monthlyEventListBackButton.Text = "Back";
-            this.monthlyEventListBackButton.UseVisualStyleBackColor = false;
-            this.monthlyEventListBackButton.Click += new System.EventHandler(this.monthlyEventListBackButton_Click);
+            this.monthlyEventListLabel.AutoSize = true;
+            this.monthlyEventListLabel.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.monthlyEventListLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.monthlyEventListLabel.Location = new System.Drawing.Point(460, 20);
+            this.monthlyEventListLabel.Name = "monthlyEventListLabel";
+            this.monthlyEventListLabel.Size = new System.Drawing.Size(257, 32);
+            this.monthlyEventListLabel.TabIndex = 0;
+            this.monthlyEventListLabel.Text = "Monthly Event List";
             // 
             // eventOptionsPanel
             // 
@@ -1468,31 +1492,51 @@ namespace CalendarGroupProject
             this.eventOptionsPanel.Size = new System.Drawing.Size(1160, 669);
             this.eventOptionsPanel.TabIndex = 48;
             // 
-            // button1
+            // button5
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.button1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(480, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 48);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "View Event Details";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button5.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(361, 29);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(67, 35);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Back";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button2
+            // label42
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.button2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(480, 172);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 48);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Edit Event Details";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label42.Location = new System.Drawing.Point(434, 48);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(196, 19);
+            this.label42.TabIndex = 5;
+            this.label42.Text = "Event Name Placeholder";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label41.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label41.Location = new System.Drawing.Point(434, 29);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(157, 19);
+            this.label41.TabIndex = 4;
+            this.label41.Text = "You have selected: ";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label40.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label40.Location = new System.Drawing.Point(434, 88);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(308, 19);
+            this.label40.TabIndex = 3;
+            this.label40.Text = "What would you like to do to the event?";
             // 
             // button3
             // 
@@ -1507,38 +1551,31 @@ namespace CalendarGroupProject
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label40
+            // button2
             // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label40.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label40.Location = new System.Drawing.Point(434, 88);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(308, 19);
-            this.label40.TabIndex = 3;
-            this.label40.Text = "What would you like to do to the event?";
+            this.button2.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.button2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(480, 172);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(206, 48);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Edit Event Details";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label41
+            // button1
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label41.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label41.Location = new System.Drawing.Point(434, 29);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(157, 19);
-            this.label41.TabIndex = 4;
-            this.label41.Text = "You have selected: ";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label42.Location = new System.Drawing.Point(434, 48);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(196, 19);
-            this.label42.TabIndex = 5;
-            this.label42.Text = "Event Name Placeholder";
+            this.button1.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.button1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(480, 118);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(206, 48);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "View Event Details";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // viewEventPanel
             // 
@@ -1558,110 +1595,6 @@ namespace CalendarGroupProject
             this.viewEventPanel.Size = new System.Drawing.Size(1160, 669);
             this.viewEventPanel.TabIndex = 49;
             // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label43.Location = new System.Drawing.Point(459, 37);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(95, 19);
-            this.label43.TabIndex = 0;
-            this.label43.Text = "Event Title:";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label44.Location = new System.Drawing.Point(459, 66);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(50, 19);
-            this.label44.TabIndex = 1;
-            this.label44.Text = "Date:";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label45.Location = new System.Drawing.Point(459, 96);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(52, 19);
-            this.label45.TabIndex = 2;
-            this.label45.Text = "Time:";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label46.Location = new System.Drawing.Point(458, 140);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(67, 19);
-            this.label46.TabIndex = 3;
-            this.label46.Text = "Details:";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label47.Location = new System.Drawing.Point(458, 367);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(85, 19);
-            this.label47.TabIndex = 4;
-            this.label47.Text = "Members:";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label48.Location = new System.Drawing.Point(577, 37);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(136, 19);
-            this.label48.TabIndex = 5;
-            this.label48.Text = "Title Placeholder";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label49.Location = new System.Drawing.Point(577, 66);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(139, 19);
-            this.label49.TabIndex = 6;
-            this.label49.Text = "Date Placeholder";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label50.Location = new System.Drawing.Point(577, 96);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(141, 19);
-            this.label50.TabIndex = 7;
-            this.label50.Text = "Time Placeholder";
-            // 
-            // listBox36
-            // 
-            this.listBox36.FormattingEnabled = true;
-            this.listBox36.Location = new System.Drawing.Point(462, 162);
-            this.listBox36.Name = "listBox36";
-            this.listBox36.Size = new System.Drawing.Size(244, 199);
-            this.listBox36.TabIndex = 8;
-            // 
-            // listBox37
-            // 
-            this.listBox37.FormattingEnabled = true;
-            this.listBox37.Location = new System.Drawing.Point(462, 390);
-            this.listBox37.Name = "listBox37";
-            this.listBox37.Size = new System.Drawing.Size(244, 199);
-            this.listBox37.TabIndex = 9;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DarkTurquoise;
@@ -1675,18 +1608,109 @@ namespace CalendarGroupProject
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // listBox37
             // 
-            this.button5.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(361, 29);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(67, 35);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Back";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.listBox37.FormattingEnabled = true;
+            this.listBox37.Location = new System.Drawing.Point(462, 390);
+            this.listBox37.Name = "listBox37";
+            this.listBox37.Size = new System.Drawing.Size(244, 199);
+            this.listBox37.TabIndex = 9;
+            // 
+            // listBox36
+            // 
+            this.listBox36.FormattingEnabled = true;
+            this.listBox36.Location = new System.Drawing.Point(462, 162);
+            this.listBox36.Name = "listBox36";
+            this.listBox36.Size = new System.Drawing.Size(244, 199);
+            this.listBox36.TabIndex = 8;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label50.Location = new System.Drawing.Point(577, 96);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(141, 19);
+            this.label50.TabIndex = 7;
+            this.label50.Text = "Time Placeholder";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label49.Location = new System.Drawing.Point(577, 66);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(139, 19);
+            this.label49.TabIndex = 6;
+            this.label49.Text = "Date Placeholder";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label48.Location = new System.Drawing.Point(577, 37);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(136, 19);
+            this.label48.TabIndex = 5;
+            this.label48.Text = "Title Placeholder";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label47.Location = new System.Drawing.Point(458, 367);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(85, 19);
+            this.label47.TabIndex = 4;
+            this.label47.Text = "Members:";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label46.Location = new System.Drawing.Point(458, 140);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(67, 19);
+            this.label46.TabIndex = 3;
+            this.label46.Text = "Details:";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label45.Location = new System.Drawing.Point(459, 96);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(52, 19);
+            this.label45.TabIndex = 2;
+            this.label45.Text = "Time:";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label44.Location = new System.Drawing.Point(459, 66);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(50, 19);
+            this.label44.TabIndex = 1;
+            this.label44.Text = "Date:";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label43.Location = new System.Drawing.Point(459, 37);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(95, 19);
+            this.label43.TabIndex = 0;
+            this.label43.Text = "Event Title:";
             // 
             // editEventPanel
             // 
@@ -1706,6 +1730,58 @@ namespace CalendarGroupProject
             this.editEventPanel.Name = "editEventPanel";
             this.editEventPanel.Size = new System.Drawing.Size(1160, 669);
             this.editEventPanel.TabIndex = 50;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.button7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(467, 592);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(108, 36);
+            this.button7.TabIndex = 27;
+            this.button7.Text = "Confirm";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(466, 384);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(253, 202);
+            this.textBox5.TabIndex = 26;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(465, 157);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(253, 202);
+            this.textBox4.TabIndex = 25;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker3.Location = new System.Drawing.Point(573, 89);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(145, 20);
+            this.dateTimePicker3.TabIndex = 24;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(573, 61);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(145, 20);
+            this.dateTimePicker2.TabIndex = 23;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(573, 32);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(145, 20);
+            this.textBox3.TabIndex = 22;
             // 
             // button6
             // 
@@ -1774,83 +1850,6 @@ namespace CalendarGroupProject
             this.label58.Size = new System.Drawing.Size(95, 19);
             this.label58.TabIndex = 11;
             this.label58.Text = "Event Title:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(573, 32);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 20);
-            this.textBox3.TabIndex = 22;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(573, 61);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(145, 20);
-            this.dateTimePicker2.TabIndex = 23;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker3.Location = new System.Drawing.Point(573, 89);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(145, 20);
-            this.dateTimePicker3.TabIndex = 24;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(465, 157);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(253, 202);
-            this.textBox4.TabIndex = 25;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(466, 384);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(253, 202);
-            this.textBox5.TabIndex = 26;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.button7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(467, 592);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(108, 36);
-            this.button7.TabIndex = 27;
-            this.button7.Text = "Confirm";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker4.CalendarForeColor = System.Drawing.Color.DarkTurquoise;
-            this.dateTimePicker4.CalendarTitleForeColor = System.Drawing.Color.DarkTurquoise;
-            this.dateTimePicker4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker4.Location = new System.Drawing.Point(528, 155);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(112, 23);
-            this.dateTimePicker4.TabIndex = 18;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label51.Location = new System.Drawing.Point(463, 157);
-            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(52, 19);
-            this.label51.TabIndex = 17;
-            this.label51.Text = "Time:";
             // 
             // coordinateMeetingPanel
             // 
@@ -2019,7 +2018,7 @@ namespace CalendarGroupProject
             this.label62.Location = new System.Drawing.Point(476, 35);
             this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(215, 32);
+            this.label62.Size = new System.Drawing.Size(214, 32);
             this.label62.TabIndex = 19;
             this.label62.Text = "Meeting Details";
             // 
@@ -2038,7 +2037,7 @@ namespace CalendarGroupProject
             this.Controls.Add(this.editEventPanel);
             this.Controls.Add(this.viewEventPanel);
             this.Controls.Add(this.coordinateMeetingPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.calendarPanel.ResumeLayout(false);
