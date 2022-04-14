@@ -179,6 +179,10 @@ namespace CalendarGroupProject
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
             this.calendarPanel.SuspendLayout();
             this.addEventPanel.SuspendLayout();
             this.viewMonthlyEventPanel.SuspendLayout();
@@ -209,12 +213,16 @@ namespace CalendarGroupProject
             this.mondayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.mondayLabel.Location = new System.Drawing.Point(115, 52);
             this.mondayLabel.Name = "mondayLabel";
-            this.mondayLabel.Size = new System.Drawing.Size(57, 16);
+            this.mondayLabel.Size = new System.Drawing.Size(58, 16);
             this.mondayLabel.TabIndex = 4;
             this.mondayLabel.Text = "Monday";
             // 
             // calendarPanel
             // 
+            this.calendarPanel.Controls.Add(this.label66);
+            this.calendarPanel.Controls.Add(this.label65);
+            this.calendarPanel.Controls.Add(this.label64);
+            this.calendarPanel.Controls.Add(this.label63);
             this.calendarPanel.Controls.Add(this.monthSelect);
             this.calendarPanel.Controls.Add(this.viewEventListButton);
             this.calendarPanel.Controls.Add(this.label31);
@@ -342,7 +350,7 @@ namespace CalendarGroupProject
             this.label31.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label31.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(477, 500);
+            this.label31.Location = new System.Drawing.Point(477, 499);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(27, 19);
@@ -355,7 +363,7 @@ namespace CalendarGroupProject
             this.label30.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label30.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(327, 500);
+            this.label30.Location = new System.Drawing.Point(327, 499);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(27, 19);
@@ -381,7 +389,7 @@ namespace CalendarGroupProject
             this.label28.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label28.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(1079, 401);
+            this.label28.Location = new System.Drawing.Point(1076, 398);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(27, 19);
@@ -394,7 +402,7 @@ namespace CalendarGroupProject
             this.label27.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label27.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(927, 401);
+            this.label27.Location = new System.Drawing.Point(925, 398);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(27, 19);
@@ -407,7 +415,7 @@ namespace CalendarGroupProject
             this.label26.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(778, 401);
+            this.label26.Location = new System.Drawing.Point(776, 398);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(27, 19);
@@ -420,7 +428,7 @@ namespace CalendarGroupProject
             this.label25.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label25.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(628, 401);
+            this.label25.Location = new System.Drawing.Point(627, 398);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(27, 19);
@@ -433,7 +441,7 @@ namespace CalendarGroupProject
             this.label24.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label24.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(477, 401);
+            this.label24.Location = new System.Drawing.Point(477, 398);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(27, 19);
@@ -446,7 +454,7 @@ namespace CalendarGroupProject
             this.label23.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(327, 401);
+            this.label23.Location = new System.Drawing.Point(327, 398);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(27, 19);
@@ -459,7 +467,7 @@ namespace CalendarGroupProject
             this.label22.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label22.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(178, 401);
+            this.label22.Location = new System.Drawing.Point(177, 398);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(27, 19);
@@ -472,7 +480,7 @@ namespace CalendarGroupProject
             this.label21.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(1079, 301);
+            this.label21.Location = new System.Drawing.Point(1078, 297);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(27, 19);
@@ -485,7 +493,7 @@ namespace CalendarGroupProject
             this.label20.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(927, 301);
+            this.label20.Location = new System.Drawing.Point(926, 297);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(27, 19);
@@ -498,7 +506,7 @@ namespace CalendarGroupProject
             this.label19.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(778, 301);
+            this.label19.Location = new System.Drawing.Point(777, 297);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(27, 19);
@@ -511,7 +519,7 @@ namespace CalendarGroupProject
             this.label18.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(628, 301);
+            this.label18.Location = new System.Drawing.Point(627, 297);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(27, 19);
@@ -524,7 +532,7 @@ namespace CalendarGroupProject
             this.label17.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(477, 301);
+            this.label17.Location = new System.Drawing.Point(477, 297);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(27, 19);
@@ -537,7 +545,7 @@ namespace CalendarGroupProject
             this.label16.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(327, 301);
+            this.label16.Location = new System.Drawing.Point(326, 297);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(27, 19);
@@ -550,7 +558,7 @@ namespace CalendarGroupProject
             this.label15.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(178, 301);
+            this.label15.Location = new System.Drawing.Point(177, 297);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(27, 19);
@@ -563,7 +571,7 @@ namespace CalendarGroupProject
             this.label14.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(1079, 196);
+            this.label14.Location = new System.Drawing.Point(1077, 196);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(27, 19);
@@ -602,7 +610,7 @@ namespace CalendarGroupProject
             this.label11.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(629, 196);
+            this.label11.Location = new System.Drawing.Point(628, 196);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(26, 19);
@@ -628,7 +636,7 @@ namespace CalendarGroupProject
             this.label9.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(336, 196);
+            this.label9.Location = new System.Drawing.Point(328, 196);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(18, 19);
@@ -641,7 +649,7 @@ namespace CalendarGroupProject
             this.label8.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(187, 196);
+            this.label8.Location = new System.Drawing.Point(178, 196);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(18, 19);
@@ -654,7 +662,7 @@ namespace CalendarGroupProject
             this.label7.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(1087, 96);
+            this.label7.Location = new System.Drawing.Point(1082, 95);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(18, 19);
@@ -667,7 +675,7 @@ namespace CalendarGroupProject
             this.label6.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(936, 96);
+            this.label6.Location = new System.Drawing.Point(931, 95);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(18, 19);
@@ -680,7 +688,7 @@ namespace CalendarGroupProject
             this.label5.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(787, 96);
+            this.label5.Location = new System.Drawing.Point(781, 95);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 19);
@@ -693,7 +701,7 @@ namespace CalendarGroupProject
             this.label4.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(637, 96);
+            this.label4.Location = new System.Drawing.Point(630, 95);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 19);
@@ -706,7 +714,7 @@ namespace CalendarGroupProject
             this.label3.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(486, 96);
+            this.label3.Location = new System.Drawing.Point(480, 95);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(18, 19);
@@ -719,7 +727,7 @@ namespace CalendarGroupProject
             this.label2.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(336, 96);
+            this.label2.Location = new System.Drawing.Point(329, 95);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 19);
@@ -732,7 +740,7 @@ namespace CalendarGroupProject
             this.label1.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(187, 96);
+            this.label1.Location = new System.Drawing.Point(178, 96);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 19);
@@ -1123,7 +1131,7 @@ namespace CalendarGroupProject
             this.sundayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.sundayLabel.Location = new System.Drawing.Point(1012, 52);
             this.sundayLabel.Name = "sundayLabel";
-            this.sundayLabel.Size = new System.Drawing.Size(55, 16);
+            this.sundayLabel.Size = new System.Drawing.Size(56, 16);
             this.sundayLabel.TabIndex = 10;
             this.sundayLabel.Text = "Sunday";
             // 
@@ -1134,7 +1142,7 @@ namespace CalendarGroupProject
             this.saturdayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.saturdayLabel.Location = new System.Drawing.Point(858, 52);
             this.saturdayLabel.Name = "saturdayLabel";
-            this.saturdayLabel.Size = new System.Drawing.Size(64, 16);
+            this.saturdayLabel.Size = new System.Drawing.Size(65, 16);
             this.saturdayLabel.TabIndex = 9;
             this.saturdayLabel.Text = "Saturday";
             // 
@@ -1145,7 +1153,7 @@ namespace CalendarGroupProject
             this.fridayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.fridayLabel.Location = new System.Drawing.Point(718, 52);
             this.fridayLabel.Name = "fridayLabel";
-            this.fridayLabel.Size = new System.Drawing.Size(47, 16);
+            this.fridayLabel.Size = new System.Drawing.Size(48, 16);
             this.fridayLabel.TabIndex = 8;
             this.fridayLabel.Text = "Friday";
             // 
@@ -1156,7 +1164,7 @@ namespace CalendarGroupProject
             this.thursdayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.thursdayLabel.Location = new System.Drawing.Point(557, 52);
             this.thursdayLabel.Name = "thursdayLabel";
-            this.thursdayLabel.Size = new System.Drawing.Size(65, 16);
+            this.thursdayLabel.Size = new System.Drawing.Size(66, 16);
             this.thursdayLabel.TabIndex = 7;
             this.thursdayLabel.Text = "Thursday";
             // 
@@ -1167,7 +1175,7 @@ namespace CalendarGroupProject
             this.wednesdayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.wednesdayLabel.Location = new System.Drawing.Point(401, 52);
             this.wednesdayLabel.Name = "wednesdayLabel";
-            this.wednesdayLabel.Size = new System.Drawing.Size(81, 16);
+            this.wednesdayLabel.Size = new System.Drawing.Size(82, 16);
             this.wednesdayLabel.TabIndex = 6;
             this.wednesdayLabel.Text = "Wednesday";
             // 
@@ -1178,7 +1186,7 @@ namespace CalendarGroupProject
             this.tuesdayLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.tuesdayLabel.Location = new System.Drawing.Point(262, 52);
             this.tuesdayLabel.Name = "tuesdayLabel";
-            this.tuesdayLabel.Size = new System.Drawing.Size(59, 16);
+            this.tuesdayLabel.Size = new System.Drawing.Size(60, 16);
             this.tuesdayLabel.TabIndex = 5;
             this.tuesdayLabel.Text = "Tuesday";
             // 
@@ -1364,7 +1372,7 @@ namespace CalendarGroupProject
             this.label32.Location = new System.Drawing.Point(497, 22);
             this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(186, 32);
+            this.label32.Size = new System.Drawing.Size(187, 32);
             this.label32.TabIndex = 0;
             this.label32.Text = "Event Details";
             // 
@@ -1474,7 +1482,7 @@ namespace CalendarGroupProject
             this.monthlyEventListLabel.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.monthlyEventListLabel.Location = new System.Drawing.Point(460, 20);
             this.monthlyEventListLabel.Name = "monthlyEventListLabel";
-            this.monthlyEventListLabel.Size = new System.Drawing.Size(257, 32);
+            this.monthlyEventListLabel.Size = new System.Drawing.Size(258, 32);
             this.monthlyEventListLabel.TabIndex = 0;
             this.monthlyEventListLabel.Text = "Monthly Event List";
             // 
@@ -2018,9 +2026,61 @@ namespace CalendarGroupProject
             this.label62.Location = new System.Drawing.Point(476, 35);
             this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(214, 32);
+            this.label62.Size = new System.Drawing.Size(215, 32);
             this.label62.TabIndex = 19;
             this.label62.Text = "Meeting Details";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.label63.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.ForeColor = System.Drawing.Color.DimGray;
+            this.label63.Location = new System.Drawing.Point(629, 500);
+            this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(18, 19);
+            this.label63.TabIndex = 110;
+            this.label63.Text = "1";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.label64.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.ForeColor = System.Drawing.Color.DimGray;
+            this.label64.Location = new System.Drawing.Point(778, 500);
+            this.label64.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(18, 19);
+            this.label64.TabIndex = 111;
+            this.label64.Text = "2";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.label65.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.ForeColor = System.Drawing.Color.DimGray;
+            this.label65.Location = new System.Drawing.Point(927, 500);
+            this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(18, 19);
+            this.label65.TabIndex = 112;
+            this.label65.Text = "3";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.label66.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.ForeColor = System.Drawing.Color.DimGray;
+            this.label66.Location = new System.Drawing.Point(1076, 497);
+            this.label66.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(18, 19);
+            this.label66.TabIndex = 113;
+            this.label66.Text = "4";
             // 
             // Form1
             // 
@@ -2211,6 +2271,10 @@ namespace CalendarGroupProject
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label63;
     }
 }
 
