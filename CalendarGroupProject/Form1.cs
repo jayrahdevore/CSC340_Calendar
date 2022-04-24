@@ -24,6 +24,11 @@ namespace CalendarGroupProject
             viewEventPanel.Visible = false;
             editEventPanel.Visible = false;
             coordinateMeetingPanel.Visible = false;
+
+            init_calendar();
+
+            monthSelect.SelectedIndex = DateTime.Now.Month - 1;
+
         }
 
         //Exit button to close the application from any panel
@@ -159,5 +164,204 @@ namespace CalendarGroupProject
             calendarPanel.Visible = true;
             coordinateMeetingPanel.Visible = false;
         }
+
+        static List<Label> calendar_labels;
+        static List<ListBox> calendar_listboxes;
+
+        void init_calendar()
+        {
+            calendar_labels = new List<Label>();
+            calendar_listboxes = new List<ListBox>();
+
+            calendar_labels.Add(l_cal00);
+            calendar_labels.Add(l_cal01);
+            calendar_labels.Add(l_cal02);
+            calendar_labels.Add(l_cal03);
+            calendar_labels.Add(l_cal04);
+            calendar_labels.Add(l_cal05);
+            calendar_labels.Add(l_cal06);
+            calendar_labels.Add(l_cal10);
+            calendar_labels.Add(l_cal11);
+            calendar_labels.Add(l_cal12);
+            calendar_labels.Add(l_cal13);
+            calendar_labels.Add(l_cal14);
+            calendar_labels.Add(l_cal15);
+            calendar_labels.Add(l_cal16);
+            calendar_labels.Add(l_cal20);
+            calendar_labels.Add(l_cal21);
+            calendar_labels.Add(l_cal22);
+            calendar_labels.Add(l_cal23);
+            calendar_labels.Add(l_cal24);
+            calendar_labels.Add(l_cal25);
+            calendar_labels.Add(l_cal26);
+            calendar_labels.Add(l_cal30);
+            calendar_labels.Add(l_cal31);
+            calendar_labels.Add(l_cal32);
+            calendar_labels.Add(l_cal33);
+            calendar_labels.Add(l_cal34);
+            calendar_labels.Add(l_cal35);
+            calendar_labels.Add(l_cal36);
+            calendar_labels.Add(l_cal40);
+            calendar_labels.Add(l_cal41);
+            calendar_labels.Add(l_cal42);
+            calendar_labels.Add(l_cal43);
+            calendar_labels.Add(l_cal44);
+            calendar_labels.Add(l_cal45);
+            calendar_labels.Add(l_cal46);
+
+            calendar_listboxes.Add(lb_cal00);
+            calendar_listboxes.Add(lb_cal01);
+            calendar_listboxes.Add(lb_cal02);
+            calendar_listboxes.Add(lb_cal03);
+            calendar_listboxes.Add(lb_cal04);
+            calendar_listboxes.Add(lb_cal05);
+            calendar_listboxes.Add(lb_cal06);
+            calendar_listboxes.Add(lb_cal10);
+            calendar_listboxes.Add(lb_cal11);
+            calendar_listboxes.Add(lb_cal12);
+            calendar_listboxes.Add(lb_cal13);
+            calendar_listboxes.Add(lb_cal14);
+            calendar_listboxes.Add(lb_cal15);
+            calendar_listboxes.Add(lb_cal16);
+            calendar_listboxes.Add(lb_cal20);
+            calendar_listboxes.Add(lb_cal21);
+            calendar_listboxes.Add(lb_cal22);
+            calendar_listboxes.Add(lb_cal23);
+            calendar_listboxes.Add(lb_cal24);
+            calendar_listboxes.Add(lb_cal25);
+            calendar_listboxes.Add(lb_cal26);
+            calendar_listboxes.Add(lb_cal30);
+            calendar_listboxes.Add(lb_cal31);
+            calendar_listboxes.Add(lb_cal32);
+            calendar_listboxes.Add(lb_cal33);
+            calendar_listboxes.Add(lb_cal34);
+            calendar_listboxes.Add(lb_cal35);
+            calendar_listboxes.Add(lb_cal36);
+            calendar_listboxes.Add(lb_cal40);
+            calendar_listboxes.Add(lb_cal41);
+            calendar_listboxes.Add(lb_cal42);
+            calendar_listboxes.Add(lb_cal43);
+            calendar_listboxes.Add(lb_cal44);
+            calendar_listboxes.Add(lb_cal45);
+            calendar_listboxes.Add(lb_cal46);
+
+        }
+
+        void fillCalendar(int monthnum)
+        {
+            
+            // this method is designed to construct a list of days to populate the calendar
+
+
+            // testing month class... remove later
+            System.Diagnostics.Debug.Write("Testing debug console...\n");
+            //int monthnum = 4;
+
+            // initialize list of days
+            List<Day> calendar_days = new List<Day>();
+
+            // start list of days on Sunday
+            DateTime tmpday = new DateTime(2022, monthnum, 1);
+            for (; tmpday.DayOfWeek != DayOfWeek.Monday; tmpday = tmpday.AddDays(-1)) { }
+
+            // populate with 35 consecutive days
+            for (; calendar_days.Count < 35; tmpday = tmpday.AddDays(1))
+            {
+                calendar_days.Add(new Day(tmpday));
+            }
+
+            for (int i = 0; i <calendar_days.Count(); i++)
+            {
+                Day d = calendar_days[i];
+                System.Diagnostics.Debug.Write(d.day.ToString() + "\n");
+                calendar_labels[i].Text = d.day.Day.ToString();
+                if (d.day.Month != monthnum)
+                {
+                    calendar_listboxes[i].BackColor = System.Drawing.Color.DimGray;
+                    calendar_labels[i].BackColor = System.Drawing.Color.DimGray;
+                } else
+                {
+                    calendar_listboxes[i].BackColor = System.Drawing.Color.DarkTurquoise;
+                    calendar_labels[i].BackColor = System.Drawing.Color.DarkTurquoise;
+                }
+            }
+
+            /*
+
+            // 0th row
+            l_cal00.Text = calendar_days[0].day.Day.ToString();
+            l_cal01.Text = calendar_days[1].day.Day.ToString();
+            l_cal02.Text = calendar_days[2].day.Day.ToString();
+            l_cal03.Text = calendar_days[3].day.Day.ToString();
+            l_cal04.Text = calendar_days[4].day.Day.ToString();
+            l_cal05.Text = calendar_days[5].day.Day.ToString();
+            l_cal06.Text = calendar_days[6].day.Day.ToString();
+            // 1st row
+            l_cal10.Text = calendar_days[7].day.Day.ToString();
+            l_cal11.Text = calendar_days[8].day.Day.ToString();
+            l_cal12.Text = calendar_days[9].day.Day.ToString();
+            l_cal13.Text = calendar_days[10].day.Day.ToString();
+            l_cal14.Text = calendar_days[11].day.Day.ToString();
+            l_cal15.Text = calendar_days[12].day.Day.ToString();
+            l_cal16.Text = calendar_days[13].day.Day.ToString();
+            // 2nd row
+            l_cal20.Text = calendar_days[14].day.Day.ToString();
+            l_cal21.Text = calendar_days[15].day.Day.ToString();
+            l_cal22.Text = calendar_days[16].day.Day.ToString();
+            l_cal23.Text = calendar_days[16].day.Day.ToString();
+            l_cal24.Text = calendar_days[17].day.Day.ToString();
+            l_cal25.Text = calendar_days[18].day.Day.ToString();
+            l_cal26.Text = calendar_days[19].day.Day.ToString();
+            // 3rd row
+            l_cal30.Text = calendar_days[20].day.Day.ToString();
+            l_cal31.Text = calendar_days[21].day.Day.ToString();
+            l_cal32.Text = calendar_days[22].day.Day.ToString();
+            l_cal33.Text = calendar_days[23].day.Day.ToString();
+            l_cal34.Text = calendar_days[24].day.Day.ToString();
+            l_cal35.Text = calendar_days[25].day.Day.ToString();
+            l_cal36.Text = calendar_days[26].day.Day.ToString();
+            // 4th row
+            l_cal40.Text = calendar_days[27].day.Day.ToString();
+            l_cal41.Text = calendar_days[28].day.Day.ToString();
+            l_cal42.Text = calendar_days[29].day.Day.ToString();
+            l_cal43.Text = calendar_days[30].day.Day.ToString();
+            l_cal44.Text = calendar_days[31].day.Day.ToString();
+            l_cal45.Text = calendar_days[32].day.Day.ToString();
+            l_cal46.Text = calendar_days[33].day.Day.ToString();
+            foreach (Day d in calendar_days)
+            {
+                System.Diagnostics.Debug.Write(d.day.ToString() + "\n");
+            }
+            */
+
+
+
+
+        }
+
+
+        private void monthSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int month_idx = monthSelect.SelectedIndex + 1;
+            /*int month_idx = 0;
+            switch (month_name)
+            {
+                case "January": month_idx = 1; break;
+                case "Febuary": month_idx = 2; break;
+                case "March": month_idx = 3; break;
+                case "April": month_idx = 4; break;
+                case "May": month_idx = 5; break;
+                case "June": month_idx = 6; break;
+                case "July": month_idx = 7; break;
+                case "August": month_idx = 8; break;
+                case "September": month_idx = 9; break;
+                case "October": month_idx = 10; break;
+                case "November": month_idx = 11; break;
+                case "December": month_idx = 12; break;
+            }*/
+            //System.Diagnostics.Debug.Write(month_name + "\n");
+            fillCalendar(month_idx);
+        }
+
     }
 }
