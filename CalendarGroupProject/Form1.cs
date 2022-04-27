@@ -12,11 +12,16 @@ namespace CalendarGroupProject
 {
     public partial class Form1 : Form
     {
+
+        private user current_user;
+
         public Form1()
         {
             InitializeComponent();
 
+
             //make sure all panels are initialized to not visible EXCEPT home screen
+            btn_login.Visible = true;
             calendarPanel.Visible = true;
             addEventPanel.Visible = false;
             viewMonthlyEventPanel.Visible = false;
@@ -286,56 +291,6 @@ namespace CalendarGroupProject
                 }
             }
 
-            /*
-
-            // 0th row
-            l_cal00.Text = calendar_days[0].day.Day.ToString();
-            l_cal01.Text = calendar_days[1].day.Day.ToString();
-            l_cal02.Text = calendar_days[2].day.Day.ToString();
-            l_cal03.Text = calendar_days[3].day.Day.ToString();
-            l_cal04.Text = calendar_days[4].day.Day.ToString();
-            l_cal05.Text = calendar_days[5].day.Day.ToString();
-            l_cal06.Text = calendar_days[6].day.Day.ToString();
-            // 1st row
-            l_cal10.Text = calendar_days[7].day.Day.ToString();
-            l_cal11.Text = calendar_days[8].day.Day.ToString();
-            l_cal12.Text = calendar_days[9].day.Day.ToString();
-            l_cal13.Text = calendar_days[10].day.Day.ToString();
-            l_cal14.Text = calendar_days[11].day.Day.ToString();
-            l_cal15.Text = calendar_days[12].day.Day.ToString();
-            l_cal16.Text = calendar_days[13].day.Day.ToString();
-            // 2nd row
-            l_cal20.Text = calendar_days[14].day.Day.ToString();
-            l_cal21.Text = calendar_days[15].day.Day.ToString();
-            l_cal22.Text = calendar_days[16].day.Day.ToString();
-            l_cal23.Text = calendar_days[16].day.Day.ToString();
-            l_cal24.Text = calendar_days[17].day.Day.ToString();
-            l_cal25.Text = calendar_days[18].day.Day.ToString();
-            l_cal26.Text = calendar_days[19].day.Day.ToString();
-            // 3rd row
-            l_cal30.Text = calendar_days[20].day.Day.ToString();
-            l_cal31.Text = calendar_days[21].day.Day.ToString();
-            l_cal32.Text = calendar_days[22].day.Day.ToString();
-            l_cal33.Text = calendar_days[23].day.Day.ToString();
-            l_cal34.Text = calendar_days[24].day.Day.ToString();
-            l_cal35.Text = calendar_days[25].day.Day.ToString();
-            l_cal36.Text = calendar_days[26].day.Day.ToString();
-            // 4th row
-            l_cal40.Text = calendar_days[27].day.Day.ToString();
-            l_cal41.Text = calendar_days[28].day.Day.ToString();
-            l_cal42.Text = calendar_days[29].day.Day.ToString();
-            l_cal43.Text = calendar_days[30].day.Day.ToString();
-            l_cal44.Text = calendar_days[31].day.Day.ToString();
-            l_cal45.Text = calendar_days[32].day.Day.ToString();
-            l_cal46.Text = calendar_days[33].day.Day.ToString();
-            foreach (Day d in calendar_days)
-            {
-                System.Diagnostics.Debug.Write(d.day.ToString() + "\n");
-            }
-            */
-
-
-
 
         }
 
@@ -343,25 +298,41 @@ namespace CalendarGroupProject
         private void monthSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             int month_idx = monthSelect.SelectedIndex + 1;
-            /*int month_idx = 0;
-            switch (month_name)
-            {
-                case "January": month_idx = 1; break;
-                case "Febuary": month_idx = 2; break;
-                case "March": month_idx = 3; break;
-                case "April": month_idx = 4; break;
-                case "May": month_idx = 5; break;
-                case "June": month_idx = 6; break;
-                case "July": month_idx = 7; break;
-                case "August": month_idx = 8; break;
-                case "September": month_idx = 9; break;
-                case "October": month_idx = 10; break;
-                case "November": month_idx = 11; break;
-                case "December": month_idx = 12; break;
-            }*/
-            //System.Diagnostics.Debug.Write(month_name + "\n");
             fillCalendar(month_idx);
         }
 
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+
+            // initialize user
+            int user_id;
+            
+            if (int.TryParse(tb_login.Text, out user_id)) {
+                // check if ID is in DB
+                if (user.IsValidUser(user_id))
+                {
+                    this.current_user = new user(user_id);
+
+                    if (current_user.isManager()) {
+                        btn_coordinate_meeting.Enabled = true;
+                    } else
+                    {
+                        btn_coordinate_meeting.Visible = false;
+                    }
+
+                    loginPanel.Visible = false;
+                } else
+                {
+                    System.Windows.Forms.MessageBox.Show("User ID not in DB");
+                }
+                
+            } else
+            {
+                System.Windows.Forms.MessageBox.Show("Invalid user ID");
+            }
+                
+
+        }
     }
 }

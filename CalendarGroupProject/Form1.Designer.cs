@@ -69,7 +69,7 @@ namespace CalendarGroupProject
             this.l_cal02 = new System.Windows.Forms.Label();
             this.l_cal01 = new System.Windows.Forms.Label();
             this.l_cal00 = new System.Windows.Forms.Label();
-            this.coordinateMeetingButton = new System.Windows.Forms.Button();
+            this.btn_coordinate_meeting = new System.Windows.Forms.Button();
             this.addEventButton = new System.Windows.Forms.Button();
             this.lb_cal46 = new System.Windows.Forms.ListBox();
             this.lb_cal45 = new System.Windows.Forms.ListBox();
@@ -183,6 +183,10 @@ namespace CalendarGroupProject
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
+            this.loginPanel = new System.Windows.Forms.Panel();
+            this.btn_login = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_login = new System.Windows.Forms.TextBox();
             this.calendarPanel.SuspendLayout();
             this.addEventPanel.SuspendLayout();
             this.viewMonthlyEventPanel.SuspendLayout();
@@ -190,6 +194,7 @@ namespace CalendarGroupProject
             this.viewEventPanel.SuspendLayout();
             this.editEventPanel.SuspendLayout();
             this.coordinateMeetingPanel.SuspendLayout();
+            this.loginPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -256,7 +261,7 @@ namespace CalendarGroupProject
             this.calendarPanel.Controls.Add(this.l_cal02);
             this.calendarPanel.Controls.Add(this.l_cal01);
             this.calendarPanel.Controls.Add(this.l_cal00);
-            this.calendarPanel.Controls.Add(this.coordinateMeetingButton);
+            this.calendarPanel.Controls.Add(this.btn_coordinate_meeting);
             this.calendarPanel.Controls.Add(this.addEventButton);
             this.calendarPanel.Controls.Add(this.lb_cal46);
             this.calendarPanel.Controls.Add(this.lb_cal45);
@@ -800,18 +805,18 @@ namespace CalendarGroupProject
             this.l_cal00.TabIndex = 77;
             this.l_cal00.Text = "1";
             // 
-            // coordinateMeetingButton
+            // btn_coordinate_meeting
             // 
-            this.coordinateMeetingButton.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.coordinateMeetingButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coordinateMeetingButton.ForeColor = System.Drawing.Color.White;
-            this.coordinateMeetingButton.Location = new System.Drawing.Point(413, 620);
-            this.coordinateMeetingButton.Name = "coordinateMeetingButton";
-            this.coordinateMeetingButton.Size = new System.Drawing.Size(171, 36);
-            this.coordinateMeetingButton.TabIndex = 76;
-            this.coordinateMeetingButton.Text = "Coordinate Meeting";
-            this.coordinateMeetingButton.UseVisualStyleBackColor = false;
-            this.coordinateMeetingButton.Click += new System.EventHandler(this.coordinateMeetingButton_Click);
+            this.btn_coordinate_meeting.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btn_coordinate_meeting.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_coordinate_meeting.ForeColor = System.Drawing.Color.White;
+            this.btn_coordinate_meeting.Location = new System.Drawing.Point(413, 620);
+            this.btn_coordinate_meeting.Name = "btn_coordinate_meeting";
+            this.btn_coordinate_meeting.Size = new System.Drawing.Size(171, 36);
+            this.btn_coordinate_meeting.TabIndex = 76;
+            this.btn_coordinate_meeting.Text = "Coordinate Meeting";
+            this.btn_coordinate_meeting.UseVisualStyleBackColor = false;
+            this.btn_coordinate_meeting.Click += new System.EventHandler(this.coordinateMeetingButton_Click);
             // 
             // addEventButton
             // 
@@ -2083,6 +2088,42 @@ namespace CalendarGroupProject
             this.label62.TabIndex = 19;
             this.label62.Text = "Meeting Details";
             // 
+            // loginPanel
+            // 
+            this.loginPanel.Controls.Add(this.btn_login);
+            this.loginPanel.Controls.Add(this.label1);
+            this.loginPanel.Controls.Add(this.tb_login);
+            this.loginPanel.Location = new System.Drawing.Point(12, 71);
+            this.loginPanel.Name = "loginPanel";
+            this.loginPanel.Size = new System.Drawing.Size(1160, 669);
+            this.loginPanel.TabIndex = 52;
+            // 
+            // btn_login
+            // 
+            this.btn_login.Location = new System.Drawing.Point(457, 332);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_login.TabIndex = 2;
+            this.btn_login.Text = "login";
+            this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(343, 282);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "User ID";
+            // 
+            // tb_login
+            // 
+            this.tb_login.Location = new System.Drawing.Point(435, 280);
+            this.tb_login.Name = "tb_login";
+            this.tb_login.Size = new System.Drawing.Size(151, 20);
+            this.tb_login.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2091,6 +2132,7 @@ namespace CalendarGroupProject
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.loginPanel);
             this.Controls.Add(this.calendarPanel);
             this.Controls.Add(this.viewMonthlyEventPanel);
             this.Controls.Add(this.addEventPanel);
@@ -2115,6 +2157,8 @@ namespace CalendarGroupProject
             this.editEventPanel.PerformLayout();
             this.coordinateMeetingPanel.ResumeLayout(false);
             this.coordinateMeetingPanel.PerformLayout();
+            this.loginPanel.ResumeLayout(false);
+            this.loginPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2167,7 +2211,7 @@ namespace CalendarGroupProject
         private System.Windows.Forms.ListBox lb_cal12;
         private System.Windows.Forms.ListBox lb_cal11;
         private System.Windows.Forms.ListBox lb_cal10;
-        private System.Windows.Forms.Button coordinateMeetingButton;
+        private System.Windows.Forms.Button btn_coordinate_meeting;
         private System.Windows.Forms.Button addEventButton;
         private System.Windows.Forms.Label l_cal00;
         private System.Windows.Forms.Label l_cal16;
@@ -2276,6 +2320,10 @@ namespace CalendarGroupProject
         private System.Windows.Forms.Label l_cal45;
         private System.Windows.Forms.Label l_cal44;
         private System.Windows.Forms.Label l_cal43;
+        private System.Windows.Forms.Panel loginPanel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_login;
+        private System.Windows.Forms.Button btn_login;
     }
 }
 
