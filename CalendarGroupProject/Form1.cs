@@ -154,6 +154,11 @@ namespace CalendarGroupProject
             MessageBox.Show(box_msg, box_title);
             addEventPanel.Visible = false;
             calendarPanel.Visible = true;
+
+            current_user.addEvent(tb_event_title.Text, tb_event_details.Text,
+                dt_enter_start.Value, // start time
+                dt_enter_end.Value); // end time
+
         }
 
         //coordinate meeting button opens the manager menu
@@ -318,7 +323,7 @@ namespace CalendarGroupProject
                         btn_coordinate_meeting.Enabled = true;
                     } else
                     {
-                        btn_coordinate_meeting.Visible = false;
+                        btn_coordinate_meeting.Enabled = false;
                     }
 
                     loginPanel.Visible = false;
@@ -334,5 +339,6 @@ namespace CalendarGroupProject
                 
 
         }
+
     }
 }

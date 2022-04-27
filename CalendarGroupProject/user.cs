@@ -32,7 +32,7 @@ namespace CalendarGroupProject
                 if (myReader.Read())
                 {
                     // user_id exists
-                    is_in_db = true;
+                    is_in_db = myReader.HasRows;
                 }
                 myReader.Close();
             }
@@ -75,6 +75,34 @@ namespace CalendarGroupProject
             conn.Close();
             Console.WriteLine("Done.");
             return result;
+        }
+
+        public bool addEvent(string event_name, string event_description, DateTime start_time, DateTime end_time)
+        {
+            bool result = false;
+            MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
+            try
+            {
+                Console.WriteLine("Connecting to MySQL...");
+                conn.Open();
+                // WARNING: suceptible to SQL injection... maybe make description binary? (at least sanitize)
+                string sql = "INSERT INTO events (event_name, event_description, start_time, end_time)"
+                    + "VALUES (@event_name, @event_description, @start_time, @end_time);";
+                MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@event_name", event_name);
+                cmd.Parameters.AddWithValue("@event_description", event_description);
+                cmd.Parameters.AddWithValue("@start_time", start_time);
+                cmd.Parameters.AddWithValue("@end_time", end_time);
+                MySqlDataReader myReader = cmd.ExecuteReader();
+                myReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            conn.Close();
+            Console.WriteLine("Done.");
+            return true;
         }
     }
 }

@@ -114,15 +114,15 @@ namespace CalendarGroupProject
             this.tuesdayLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.addEventPanel = new System.Windows.Forms.Panel();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dt_enter_end = new System.Windows.Forms.DateTimePicker();
             this.label51 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dt_enter_start = new System.Windows.Forms.DateTimePicker();
             this.label34 = new System.Windows.Forms.Label();
             this.backButtonAddEvent = new System.Windows.Forms.Button();
             this.buttonAddEvent = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBoxAddTitle = new System.Windows.Forms.TextBox();
+            this.tb_event_members = new System.Windows.Forms.TextBox();
+            this.tb_event_details = new System.Windows.Forms.TextBox();
+            this.tb_event_title = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -1263,15 +1263,15 @@ namespace CalendarGroupProject
             // 
             // addEventPanel
             // 
-            this.addEventPanel.Controls.Add(this.dateTimePicker4);
+            this.addEventPanel.Controls.Add(this.dt_enter_end);
             this.addEventPanel.Controls.Add(this.label51);
-            this.addEventPanel.Controls.Add(this.dateTimePicker1);
+            this.addEventPanel.Controls.Add(this.dt_enter_start);
             this.addEventPanel.Controls.Add(this.label34);
             this.addEventPanel.Controls.Add(this.backButtonAddEvent);
             this.addEventPanel.Controls.Add(this.buttonAddEvent);
-            this.addEventPanel.Controls.Add(this.textBox2);
-            this.addEventPanel.Controls.Add(this.textBox1);
-            this.addEventPanel.Controls.Add(this.textBoxAddTitle);
+            this.addEventPanel.Controls.Add(this.tb_event_members);
+            this.addEventPanel.Controls.Add(this.tb_event_details);
+            this.addEventPanel.Controls.Add(this.tb_event_title);
             this.addEventPanel.Controls.Add(this.label38);
             this.addEventPanel.Controls.Add(this.label37);
             this.addEventPanel.Controls.Add(this.label33);
@@ -1282,18 +1282,18 @@ namespace CalendarGroupProject
             this.addEventPanel.Size = new System.Drawing.Size(1160, 669);
             this.addEventPanel.TabIndex = 6;
             // 
-            // dateTimePicker4
+            // dt_enter_end
             // 
-            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker4.CalendarForeColor = System.Drawing.Color.DarkTurquoise;
-            this.dateTimePicker4.CalendarTitleForeColor = System.Drawing.Color.DarkTurquoise;
-            this.dateTimePicker4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker4.Location = new System.Drawing.Point(528, 155);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(112, 23);
-            this.dateTimePicker4.TabIndex = 18;
+            this.dt_enter_end.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_enter_end.CalendarForeColor = System.Drawing.Color.DarkTurquoise;
+            this.dt_enter_end.CalendarTitleForeColor = System.Drawing.Color.DarkTurquoise;
+            this.dt_enter_end.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.dt_enter_end.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dt_enter_end.Location = new System.Drawing.Point(528, 155);
+            this.dt_enter_end.Margin = new System.Windows.Forms.Padding(2);
+            this.dt_enter_end.Name = "dt_enter_end";
+            this.dt_enter_end.Size = new System.Drawing.Size(112, 23);
+            this.dt_enter_end.TabIndex = 18;
             // 
             // label51
             // 
@@ -1303,22 +1303,22 @@ namespace CalendarGroupProject
             this.label51.Location = new System.Drawing.Point(463, 157);
             this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(52, 19);
+            this.label51.Size = new System.Drawing.Size(46, 19);
             this.label51.TabIndex = 17;
-            this.label51.Text = "Time:";
+            this.label51.Text = "End:";
             // 
-            // dateTimePicker1
+            // dt_enter_start
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.DarkTurquoise;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DarkTurquoise;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(528, 123);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(112, 23);
-            this.dateTimePicker1.TabIndex = 16;
+            this.dt_enter_start.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_enter_start.CalendarForeColor = System.Drawing.Color.DarkTurquoise;
+            this.dt_enter_start.CalendarTitleForeColor = System.Drawing.Color.DarkTurquoise;
+            this.dt_enter_start.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.dt_enter_start.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dt_enter_start.Location = new System.Drawing.Point(528, 123);
+            this.dt_enter_start.Margin = new System.Windows.Forms.Padding(2);
+            this.dt_enter_start.Name = "dt_enter_start";
+            this.dt_enter_start.Size = new System.Drawing.Size(112, 23);
+            this.dt_enter_start.TabIndex = 16;
             // 
             // label34
             // 
@@ -1328,9 +1328,9 @@ namespace CalendarGroupProject
             this.label34.Location = new System.Drawing.Point(463, 125);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(50, 19);
+            this.label34.Size = new System.Drawing.Size(51, 19);
             this.label34.TabIndex = 15;
-            this.label34.Text = "Date:";
+            this.label34.Text = "Start:";
             // 
             // backButtonAddEvent
             // 
@@ -1360,31 +1360,31 @@ namespace CalendarGroupProject
             this.buttonAddEvent.UseVisualStyleBackColor = false;
             this.buttonAddEvent.Click += new System.EventHandler(this.buttonAddEvent_Click);
             // 
-            // textBox2
+            // tb_event_members
             // 
-            this.textBox2.Location = new System.Drawing.Point(465, 379);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(243, 133);
-            this.textBox2.TabIndex = 12;
+            this.tb_event_members.Location = new System.Drawing.Point(465, 379);
+            this.tb_event_members.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_event_members.Multiline = true;
+            this.tb_event_members.Name = "tb_event_members";
+            this.tb_event_members.Size = new System.Drawing.Size(243, 133);
+            this.tb_event_members.TabIndex = 12;
             // 
-            // textBox1
+            // tb_event_details
             // 
-            this.textBox1.Location = new System.Drawing.Point(465, 217);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 133);
-            this.textBox1.TabIndex = 11;
+            this.tb_event_details.Location = new System.Drawing.Point(465, 217);
+            this.tb_event_details.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_event_details.Multiline = true;
+            this.tb_event_details.Name = "tb_event_details";
+            this.tb_event_details.Size = new System.Drawing.Size(243, 133);
+            this.tb_event_details.TabIndex = 11;
             // 
-            // textBoxAddTitle
+            // tb_event_title
             // 
-            this.textBoxAddTitle.Location = new System.Drawing.Point(573, 89);
-            this.textBoxAddTitle.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxAddTitle.Name = "textBoxAddTitle";
-            this.textBoxAddTitle.Size = new System.Drawing.Size(136, 20);
-            this.textBoxAddTitle.TabIndex = 7;
+            this.tb_event_title.Location = new System.Drawing.Point(573, 89);
+            this.tb_event_title.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_event_title.Name = "tb_event_title";
+            this.tb_event_title.Size = new System.Drawing.Size(136, 20);
+            this.tb_event_title.TabIndex = 7;
             // 
             // label38
             // 
@@ -2132,14 +2132,14 @@ namespace CalendarGroupProject
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.loginPanel);
-            this.Controls.Add(this.calendarPanel);
-            this.Controls.Add(this.viewMonthlyEventPanel);
             this.Controls.Add(this.addEventPanel);
             this.Controls.Add(this.eventOptionsPanel);
             this.Controls.Add(this.editEventPanel);
             this.Controls.Add(this.viewEventPanel);
             this.Controls.Add(this.coordinateMeetingPanel);
+            this.Controls.Add(this.loginPanel);
+            this.Controls.Add(this.calendarPanel);
+            this.Controls.Add(this.viewMonthlyEventPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -2246,9 +2246,9 @@ namespace CalendarGroupProject
         private System.Windows.Forms.Label l_cal20;
         private System.Windows.Forms.Panel addEventPanel;
         private System.Windows.Forms.Button buttonAddEvent;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBoxAddTitle;
+        private System.Windows.Forms.TextBox tb_event_members;
+        private System.Windows.Forms.TextBox tb_event_details;
+        private System.Windows.Forms.TextBox tb_event_title;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label33;
@@ -2256,7 +2256,7 @@ namespace CalendarGroupProject
         private System.Windows.Forms.Button backButtonAddEvent;
         private System.Windows.Forms.ComboBox monthSelect;
         private System.Windows.Forms.Button viewEventListButton;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dt_enter_start;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Panel viewMonthlyEventPanel;
         private System.Windows.Forms.ListBox monthlyEventListListBox;
@@ -2300,7 +2300,7 @@ namespace CalendarGroupProject
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dt_enter_end;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Panel coordinateMeetingPanel;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
