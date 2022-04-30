@@ -14,25 +14,27 @@ namespace CalendarGroupProject
     {
 
         private user current_user;
+        private int current_month;
+        Event selected_event;
 
         public Form1()
         {
             InitializeComponent();
 
 
-            //make sure all panels are initialized to not visible EXCEPT home screen
+            //make sure all panels are initialized to not visible EXCEPT login screen
             btn_login.Visible = true;
-            calendarPanel.Visible = true;
+            calendarPanel.Visible = false;
             addEventPanel.Visible = false;
             viewMonthlyEventPanel.Visible = false;
-            eventOptionsPanel.Visible = false;
-            viewEventPanel.Visible = false;
-            editEventPanel.Visible = false;
-            coordinateMeetingPanel.Visible = false;
+            //eventOptionsPanel.Visible = false;
+            //viewEventPanel.Visible = false;
+            //editEventPanel.Visible = false;
+            //coordinateMeetingPanel.Visible = false;
 
+            selected_event = null;
             init_calendar();
-
-            monthSelect.SelectedIndex = DateTime.Now.Month - 1;
+            
 
         }
 
@@ -47,6 +49,7 @@ namespace CalendarGroupProject
         {
             calendarPanel.Visible = false;
             addEventPanel.Visible = true;
+            updateEditView();
         }
 
         //back button from "Add Event" menu to home screen
@@ -63,10 +66,6 @@ namespace CalendarGroupProject
             calendarPanel.Visible = true;
             addEventPanel.Visible = false;
             viewMonthlyEventPanel.Visible = false;
-            eventOptionsPanel.Visible = false;
-            viewEventPanel.Visible = false;
-            editEventPanel.Visible = false;
-            coordinateMeetingPanel.Visible = false;
         }
 
         //back button to go back to home from monthly event viewer panel
@@ -81,99 +80,90 @@ namespace CalendarGroupProject
         {
             viewMonthlyEventPanel.Visible = true;
             monthlyEventListListBox.Items.Clear();
-            monthlyEventListListBox.Items.Add("Event 1");
-            monthlyEventListListBox.Items.Add("Event 2");
+            foreach (Event ev in current_user.eventsInMonth(new DateTime(2022, current_month, 1))) {
+                monthlyEventListListBox.Items.Add(ev);
+            }
+            
             calendarPanel.Visible = false;
         }
 
         //when clicking an event within the monthly event view panel
         private void monthlyEventListListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            viewMonthlyEventPanel.Visible = false;
-            eventOptionsPanel.Visible = true;
+            
+
         }
 
-        //delete event confirmation button
-        private void button3_Click(object sender, EventArgs e)
+        private void updateEditView()
         {
-            string box_msg = "Are you sure you want to delete?";
-            string box_title = "Calendar App";
-            MessageBox.Show(box_msg, box_title);
+            // populate fields if editing existing event
+            if (selected_event != null)
+            {
+                tb_event_title.Text = selected_event.ToString();
+                tb_event_details.Text = selected_event.getDescription();
+                dt_enter_start.Value = selected_event.getStartTime();
+                dt_enter_end.Value = selected_event.getEndTime();
+                lb_event_members.Items.Clear();
+                foreach (user u in selected_event.usersInEvent())
+                {
+                    lb_event_members.Items.Add(u);
+                }
+            }
+            
+            lb_all_members.Items.Clear();
+            foreach (user u in user.listAllUsers())
+            {
+                lb_all_members.Items.Add(u);
+            }
         }
 
-        //button to view event details once an event has been selected
-        private void button1_Click(object sender, EventArgs e)
-        {
-            viewEventPanel.Visible = true;
-            eventOptionsPanel.Visible = false;
-        }
 
-        //button to go back from details view to the options screen
-        private void button4_Click(object sender, EventArgs e)
-        {
-            viewEventPanel.Visible = false;
-            eventOptionsPanel.Visible = true;
-        }
-
-        //back button from options screen to monthly event planner view
-        private void button5_Click(object sender, EventArgs e)
-        {
-            eventOptionsPanel.Visible = false;
-            viewMonthlyEventPanel.Visible = true;
-        }
-
-        //Edit Event Details button
-        private void button2_Click(object sender, EventArgs e)
-        {
-            eventOptionsPanel.Visible = false;
-            editEventPanel.Visible = true;
-        }
-
-        //back button to return to options panel from edit event panel
-        private void button6_Click(object sender, EventArgs e)
-        {
-            editEventPanel.Visible = false;
-            eventOptionsPanel.Visible = true;
-        }
-
-        //confirm changes save on edit panel
-        private void button7_Click(object sender, EventArgs e)
-        {
-            string box_msg = "Changes saved.";
-            string box_title = "Calendar App";
-            MessageBox.Show(box_msg, box_title);
-            editEventPanel.Visible = false;
-            calendarPanel.Visible = true;
-        }
 
         //confirm event added on add event panel
         private void buttonAddEvent_Click(object sender, EventArgs e)
         {
             string box_msg = "Event added.";
             string box_title = "Calendar App";
-            MessageBox.Show(box_msg, box_title);
-            addEventPanel.Visible = false;
-            calendarPanel.Visible = true;
+            
 
-            current_user.addEvent(tb_event_title.Text, tb_event_details.Text,
-                dt_enter_start.Value, // start time
-                dt_enter_end.Value); // end time
+            if (current_user.isOccupied(dt_enter_start.Value, dt_enter_end.Value))
+            {
+                System.Windows.Forms.MessageBox.Show("Time already occupied");
+
+            } else
+            {
+                if (selected_event == null)
+                {
+                    
+                    constructSelectedEvent();
+                    MessageBox.Show(box_msg, box_title);
+                } else
+                {
+                    if (selected_event.isOccupied(dt_enter_start.Value, dt_enter_end.Value))
+                    {
+                        System.Windows.Forms.MessageBox.Show("Time overlap exists");
+                    } else
+                    {
+                        selected_event.setEventName(tb_event_title.Text);
+                        selected_event.setEventDescription(tb_event_details.Text);
+                        selected_event.setStartTime(dt_enter_start.Value);
+                        selected_event.setEndTime(dt_enter_end.Value);
+                        selected_event.updateDB();
+                        System.Windows.Forms.MessageBox.Show("Updated Event");
+                    }
+                }
+                
+                addEventPanel.Visible = false;
+                calendarPanel.Visible = true;
+                
+                current_month = monthSelect.SelectedIndex + 1;
+                fillCalendar();
+            }
+            
 
         }
 
-        //coordinate meeting button opens the manager menu
-        private void coordinateMeetingButton_Click(object sender, EventArgs e)
-        {
-            calendarPanel.Visible = false;
-            coordinateMeetingPanel.Visible = true;
-        }
 
-        //back from corrdinate meeting to home page
-        private void button8_Click(object sender, EventArgs e)
-        {
-            calendarPanel.Visible = true;
-            coordinateMeetingPanel.Visible = false;
-        }
 
         static List<Label> calendar_labels;
         static List<ListBox> calendar_listboxes;
@@ -257,11 +247,12 @@ namespace CalendarGroupProject
 
         }
 
-        void fillCalendar(int monthnum)
+        void fillCalendar()
         {
-            
+
             // this method is designed to construct a list of days to populate the calendar
 
+            int monthnum = current_month;
 
             // testing month class... remove later
             System.Diagnostics.Debug.Write("Testing debug console...\n");
@@ -294,6 +285,15 @@ namespace CalendarGroupProject
                     calendar_listboxes[i].BackColor = System.Drawing.Color.DarkTurquoise;
                     calendar_labels[i].BackColor = System.Drawing.Color.DarkTurquoise;
                 }
+                calendar_listboxes[i].Items.Clear();
+
+                foreach (Event e in current_user.eventsOnDate(d.day)) {
+
+                    calendar_listboxes[i].Items.Add(e);
+                    calendar_listboxes[i].Enabled = false;
+                }
+                
+                
             }
 
 
@@ -302,8 +302,8 @@ namespace CalendarGroupProject
 
         private void monthSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int month_idx = monthSelect.SelectedIndex + 1;
-            fillCalendar(month_idx);
+            current_month = monthSelect.SelectedIndex + 1;
+            fillCalendar();
         }
 
 
@@ -320,13 +320,22 @@ namespace CalendarGroupProject
                     this.current_user = new user(user_id);
 
                     if (current_user.isManager()) {
-                        btn_coordinate_meeting.Enabled = true;
+                        lb_event_members.Enabled = true;
+                        lb_all_members.Enabled = true;
+                        btn_add_member.Enabled = true;
+                        btn_delete_member.Enabled = true;
                     } else
                     {
-                        btn_coordinate_meeting.Enabled = false;
+                        lb_event_members.Enabled = false;
+                        lb_all_members.Enabled = false;
+                        btn_add_member.Enabled = false;
+                        btn_delete_member.Enabled = false;
                     }
 
                     loginPanel.Visible = false;
+                    
+                    monthSelect.SelectedIndex = DateTime.Now.Month - 1;
+                    calendarPanel.Visible = true;
                 } else
                 {
                     System.Windows.Forms.MessageBox.Show("User ID not in DB");
@@ -338,6 +347,53 @@ namespace CalendarGroupProject
             }
                 
 
+        }
+
+        private void btn_delete_event_Click(object sender, EventArgs e)
+        {
+            selected_event.deleteEvent();
+            selected_event = null;
+            fillCalendar();
+            calendarPanel.Visible = true;
+            addEventPanel.Visible = false;
+            
+        }
+
+        private void btn_add_member_Click(object sender, EventArgs e)
+        {
+            // populate if event exists, else create the event so we can work on it
+            if (selected_event == null)
+            {
+                constructSelectedEvent();
+            }
+            selected_event.addMember((user)lb_all_members.SelectedItem);
+
+            updateEditView();
+        }
+
+        private void constructSelectedEvent()
+        {
+            // create event
+            selected_event = new Event(tb_event_title.Text.ToString(), tb_event_details.Text.ToString(),
+                dt_enter_start.Value, // start time
+                dt_enter_end.Value); // end time
+        }
+
+        private void btn_delete_member_Click(object sender, EventArgs e)
+        {
+            selected_event.removeMember((user)lb_event_members.SelectedItem);
+            updateEditView();
+        }
+
+        private void btn_edit_event_Click(object sender, EventArgs e)
+        {
+            // button for editing an event
+            selected_event = (Event)monthlyEventListListBox.SelectedItem;
+            if (selected_event == null)
+                return;
+            viewMonthlyEventPanel.Visible = false;
+            addEventPanel.Visible = true;
+            updateEditView();
         }
 
     }
