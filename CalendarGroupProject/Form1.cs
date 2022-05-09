@@ -12,168 +12,55 @@ namespace CalendarGroupProject
 {
     public partial class Form1 : Form
     {
+        // lists of labels and listboxes for month view
+        static List<Label> calendar_labels;
+        static List<ListBox> calendar_listboxes;
 
-        private user current_user;
+        // current selections
+        private User current_user;
+        private Event selected_event;
+
+        // datetime for calendar and monthly view
+        private DateTime selected_view_datetime;
+
+        // persistent connection
+        SQLConnection conn;
 
         public Form1()
         {
+
+            // open SQL connection (class constants handle constant URL for now)
+            conn = new SQLConnection();
+
+            // set up forms
             InitializeComponent();
+            InitCalendar();
 
+            /* Initialize login Sequence */
 
-            //make sure all panels are initialized to not visible EXCEPT home screen
-            btn_login.Visible = true;
-            calendarPanel.Visible = true;
-            addEventPanel.Visible = false;
-            viewMonthlyEventPanel.Visible = false;
-            eventOptionsPanel.Visible = false;
-            viewEventPanel.Visible = false;
-            editEventPanel.Visible = false;
-            coordinateMeetingPanel.Visible = false;
+            // list all users on login panel
+            List<User> users = User.GetAllUsers(conn);
 
-            init_calendar();
+            // add user names to listbox
+            users.ForEach(v => lb_users_login.Items.Add(v));
 
-            monthSelect.SelectedIndex = DateTime.Now.Month - 1;
+            loginPanel.BringToFront();
+
+            // initialize as current day
+            selected_view_datetime = DateTime.Now;
+
 
         }
 
         //Exit button to close the application from any panel
-        private void exitButton_Click(object sender, EventArgs e)
+        private void btn_exit_Click(object sender, EventArgs e)
         {
+            conn.Close();
             Application.Exit();
         }
 
-        //"Add Event" button takes user to add event panel
-        private void addEventButton_Click(object sender, EventArgs e)
-        {
-            calendarPanel.Visible = false;
-            addEventPanel.Visible = true;
-        }
 
-        //back button from "Add Event" menu to home screen
-        private void backButtonAddEvent_Click(object sender, EventArgs e)
-        {
-            calendarPanel.Visible = true;
-            addEventPanel.Visible = false;
-        }
-
-        //Title label, "Calendar App", user can click to return to home screen
-        //make sure all panels aside from calendarPanel are set to false in this method
-        private void titleLabel_Click(object sender, EventArgs e)
-        {
-            calendarPanel.Visible = true;
-            addEventPanel.Visible = false;
-            viewMonthlyEventPanel.Visible = false;
-            eventOptionsPanel.Visible = false;
-            viewEventPanel.Visible = false;
-            editEventPanel.Visible = false;
-            coordinateMeetingPanel.Visible = false;
-        }
-
-        //back button to go back to home from monthly event viewer panel
-        private void monthlyEventListBackButton_Click(object sender, EventArgs e)
-        {
-            viewMonthlyEventPanel.Visible = false;
-            calendarPanel.Visible = true;
-        }
-
-        //button to show monthly event list panel, initialize listbox contents here?
-        private void viewEventListButton_Click(object sender, EventArgs e)
-        {
-            viewMonthlyEventPanel.Visible = true;
-            monthlyEventListListBox.Items.Clear();
-            monthlyEventListListBox.Items.Add("Event 1");
-            monthlyEventListListBox.Items.Add("Event 2");
-            calendarPanel.Visible = false;
-        }
-
-        //when clicking an event within the monthly event view panel
-        private void monthlyEventListListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            viewMonthlyEventPanel.Visible = false;
-            eventOptionsPanel.Visible = true;
-        }
-
-        //delete event confirmation button
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string box_msg = "Are you sure you want to delete?";
-            string box_title = "Calendar App";
-            MessageBox.Show(box_msg, box_title);
-        }
-
-        //button to view event details once an event has been selected
-        private void button1_Click(object sender, EventArgs e)
-        {
-            viewEventPanel.Visible = true;
-            eventOptionsPanel.Visible = false;
-        }
-
-        //button to go back from details view to the options screen
-        private void button4_Click(object sender, EventArgs e)
-        {
-            viewEventPanel.Visible = false;
-            eventOptionsPanel.Visible = true;
-        }
-
-        //back button from options screen to monthly event planner view
-        private void button5_Click(object sender, EventArgs e)
-        {
-            eventOptionsPanel.Visible = false;
-            viewMonthlyEventPanel.Visible = true;
-        }
-
-        //Edit Event Details button
-        private void button2_Click(object sender, EventArgs e)
-        {
-            eventOptionsPanel.Visible = false;
-            editEventPanel.Visible = true;
-        }
-
-        //back button to return to options panel from edit event panel
-        private void button6_Click(object sender, EventArgs e)
-        {
-            editEventPanel.Visible = false;
-            eventOptionsPanel.Visible = true;
-        }
-
-        //confirm changes save on edit panel
-        private void button7_Click(object sender, EventArgs e)
-        {
-            string box_msg = "Changes saved.";
-            string box_title = "Calendar App";
-            MessageBox.Show(box_msg, box_title);
-            editEventPanel.Visible = false;
-            calendarPanel.Visible = true;
-        }
-
-        //confirm event added on add event panel
-        private void buttonAddEvent_Click(object sender, EventArgs e)
-        {
-            string box_msg = "Event added.";
-            string box_title = "Calendar App";
-            MessageBox.Show(box_msg, box_title);
-            addEventPanel.Visible = false;
-            calendarPanel.Visible = true;
-        }
-
-        //coordinate meeting button opens the manager menu
-        private void coordinateMeetingButton_Click(object sender, EventArgs e)
-        {
-            calendarPanel.Visible = false;
-            coordinateMeetingPanel.Visible = true;
-        }
-
-        //back from corrdinate meeting to home page
-        private void button8_Click(object sender, EventArgs e)
-        {
-            calendarPanel.Visible = true;
-            coordinateMeetingPanel.Visible = false;
-        }
-
-        static List<Label> calendar_labels;
-        static List<ListBox> calendar_listboxes;
-
-        void init_calendar()
+        void InitCalendar()
         {
             calendar_labels = new List<Label>();
             calendar_listboxes = new List<ListBox>();
@@ -252,44 +139,41 @@ namespace CalendarGroupProject
 
         }
 
-        void fillCalendar(int monthnum)
+        void FillCalendar()
         {
-            
-            // this method is designed to construct a list of days to populate the calendar
-
-
-            // testing month class... remove later
-            System.Diagnostics.Debug.Write("Testing debug console...\n");
-            //int monthnum = 4;
-
-            // initialize list of days
-            List<Day> calendar_days = new List<Day>();
+            // populate the calendar view with events
 
             // start list of days on Sunday
-            DateTime tmpday = new DateTime(2022, monthnum, 1);
+            DateTime tmpday = new DateTime(selected_view_datetime.Year, selected_view_datetime.Month, 1);
             for (; tmpday.DayOfWeek != DayOfWeek.Monday; tmpday = tmpday.AddDays(-1)) { }
 
             // populate with 35 consecutive days
-            for (; calendar_days.Count < 35; tmpday = tmpday.AddDays(1))
+            for (int i = 0; i < 35; i++)
             {
-                calendar_days.Add(new Day(tmpday));
-            }
-
-            for (int i = 0; i <calendar_days.Count(); i++)
-            {
-                Day d = calendar_days[i];
-                System.Diagnostics.Debug.Write(d.day.ToString() + "\n");
-                calendar_labels[i].Text = d.day.Day.ToString();
-                if (d.day.Month != monthnum)
+                calendar_labels[i].Text = tmpday.Day.ToString();
+                if (tmpday.Month != selected_view_datetime.Month)
                 {
                     calendar_listboxes[i].BackColor = System.Drawing.Color.DimGray;
                     calendar_labels[i].BackColor = System.Drawing.Color.DimGray;
-                } else
+                }
+                else
                 {
                     calendar_listboxes[i].BackColor = System.Drawing.Color.DarkTurquoise;
                     calendar_labels[i].BackColor = System.Drawing.Color.DarkTurquoise;
                 }
+                calendar_listboxes[i].Items.Clear();
+
+                foreach (Event e in current_user.EventsWithinDate(tmpday, tmpday.AddDays(1)))
+                {
+
+                    calendar_listboxes[i].Items.Add(e);
+                    calendar_listboxes[i].Enabled = false;
+                }
+                tmpday = tmpday.AddDays(1);
             }
+
+            // Updated Selected Index
+            monthSelect.SelectedIndex = selected_view_datetime.Month - 1;
 
 
         }
@@ -297,42 +181,291 @@ namespace CalendarGroupProject
 
         private void monthSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int month_idx = monthSelect.SelectedIndex + 1;
-            fillCalendar(month_idx);
+            // update calendar to reflect selected month
+            selected_view_datetime = new DateTime(
+                (int) selected_view_datetime.Year,
+                (int) monthSelect.SelectedIndex + 1,
+                1
+                );
+            FillCalendar();
+
         }
 
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            // complete login sequence
 
-            // initialize user
-            int user_id;
-            
-            if (int.TryParse(tb_login.Text, out user_id)) {
-                // check if ID is in DB
-                if (user.IsValidUser(user_id))
-                {
-                    this.current_user = new user(user_id);
+            int selected_user_id = ((User)lb_users_login.SelectedItem).ID;
 
-                    if (current_user.isManager()) {
-                        btn_coordinate_meeting.Enabled = true;
-                    } else
-                    {
-                        btn_coordinate_meeting.Visible = false;
-                    }
-
-                    loginPanel.Visible = false;
-                } else
-                {
-                    System.Windows.Forms.MessageBox.Show("User ID not in DB");
-                }
-                
-            } else
+            if (User.IsManager(conn, selected_user_id))
             {
-                System.Windows.Forms.MessageBox.Show("Invalid user ID");
+                current_user = new Manager(conn, selected_user_id);
             }
-                
+            else
+            {
+                current_user = new User(conn, selected_user_id);
+                // go ahead and hide the "schedule meeting" button if not a manager
+                btn_schedule_meeting.Visible = false;
+            }
 
+            // Update Month View
+            monthSelect.SelectedIndex = selected_view_datetime.Month - 1;
+
+            // initialize main view
+            loginPanel.Visible = false;
+            GoToMainCalendarPanel();
+
+        }
+
+        private void ViewEventListButton_Click(object sender, EventArgs e)
+        {
+            // view a list of the month's events
+            GoToMonthEventListPanel();
+        }
+
+        private void MonthEventReturnButton_Click(object sender, EventArgs e)
+        {
+            // go back to the main view
+            GoToMainCalendarPanel();
+        }
+
+        private void backButtonAddEvent_Click(object sender, EventArgs e)
+        {
+            GoToMainCalendarPanel();
+        }
+
+        private void buttonAddEvent_Click(object sender, EventArgs e)
+        {
+            // add an event to the DB under the current user
+
+            // first check for valid start and end time
+            if (dt_add_event_time_start.Value > dt_add_event_time_end.Value)
+            {
+                System.Windows.Forms.MessageBox.Show("Start time is later than end time");
+                return;
+            }
+
+            // then check to see if event can be added
+                if (current_user.EventsWithinDate(dt_add_event_time_start.Value,
+                dt_add_event_time_end.Value).Count != 0)
+            {
+                // An event exists within this time
+                System.Windows.Forms.MessageBox.Show("Time already occupied");
+                return;
+            }
+
+            // create an event from the data filled in
+            // WARNING: SQL injection very likely possible
+            Event to_add = new Event(
+                tb_add_event_title.Text,
+                tb_add_event_details.Text,
+                dt_add_event_time_start.Value,
+                dt_add_event_time_end.Value
+                );
+
+            // adding a participant syncs the event to the DB as well
+            to_add.AddParticipant(conn, current_user);
+
+            // Go back to main panel
+            GoToMainCalendarPanel();
+        }
+
+        private void addEventButton_Click(object sender, EventArgs e)
+        {
+            addEventPanel.BringToFront();
+        }
+
+        private void DeleteEventButton_Click(object sender, EventArgs e)
+        {
+            // delete selecteed
+            ((Event)MonthEventListBox.SelectedItem).Delete(conn);
+            GoToMonthEventListPanel();
+
+        }
+
+        private void EditEventButton_Click(object sender, EventArgs e)
+        {
+            // edit event properties
+            EditEventPanel.BringToFront();
+            selected_event = (Event)MonthEventListBox.SelectedItem;
+
+            tb_edit_event.Text = selected_event.event_name;
+            tb_edit_event_details.Text = selected_event.event_description;
+            dt_edit_event_start.Value = selected_event.start_time;
+            dt_edit_event_end.Value = selected_event.end_time;
+        }
+
+        private void ButtonApplyEditEvent_Click(object sender, EventArgs e)
+        {
+            // apply changes to event
+            selected_event.event_name = tb_edit_event.Text;
+            selected_event.event_description = tb_edit_event_details.Text;
+            selected_event.start_time = dt_edit_event_start.Value;
+            selected_event.end_time = dt_edit_event_end.Value;
+
+            // sync changes to DB
+            selected_event.SyncToDB(conn);
+            GoToMonthEventListPanel();
+        }
+
+        private void ButtonEditBack_Click(object sender, EventArgs e)
+        {
+            // go back to monthly event list
+            GoToMonthEventListPanel();
+
+        }
+
+        private void GoToMonthEventListPanel()
+        {
+            // populate list
+            DateTime month_start = selected_view_datetime.Add(
+                -(selected_view_datetime.TimeOfDay)
+                ).AddDays(selected_view_datetime.Day);
+
+            // fill out month list
+            MonthEventListBox.Items.Clear();
+            current_user.EventsWithinDate(month_start, month_start.AddMonths(1)).ForEach(
+                ev => MonthEventListBox.Items.Add(ev)
+            );
+            viewMonthlyEventPanel.BringToFront();
+        }
+
+        private void GoToMainCalendarPanel()
+        {
+            // Update Month View
+            FillCalendar();
+            // go to the main month calendar view
+            calendarPanel.BringToFront();
+        }
+
+        private void btn_schedule_meeting_Click(object sender, EventArgs e)
+        {
+            PanelScheduleMeeting.BringToFront();
+
+            // set up timespan options
+            lb_schedule_meeting_timespan.Items.Clear();
+            lb_schedule_meeting_timespan.Items.Add(new TimeSpan(0, 15, 0)); // 15 minutes
+            lb_schedule_meeting_timespan.Items.Add(new TimeSpan(0, 30, 0)); // 30 minutes
+            lb_schedule_meeting_timespan.Items.Add(new TimeSpan(0, 45, 0)); // 45 minutes
+            lb_schedule_meeting_timespan.Items.Add(new TimeSpan(1, 0, 0)); // 1 hour
+            lb_schedule_meeting_timespan.Items.Add(new TimeSpan(2, 0, 0)); // 2 hours
+            lb_schedule_meeting_timespan.Items.Add(new TimeSpan(3, 0, 0)); // 3 hours
+
+            cb_schedule_meeting_members.Items.Clear();
+            User.GetAllUsers(conn).ForEach(
+                user => cb_schedule_meeting_members.Items.Add(user)
+                );
+
+            
+        }
+
+        private void FillPotentialScheduledMeetingTimes()
+        {
+            // skip if timespan is not selected
+            if (lb_schedule_meeting_timespan.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            DateTime start_time = dt_schedule_meeting_start.Value;
+            DateTime end_time = dt_schedule_meeting_end.Value;
+            TimeSpan timespan = (TimeSpan)lb_schedule_meeting_timespan.SelectedItem;
+
+            // normalize start time?
+            //start_time
+
+            // would like to simplify this into a lambda function
+            List<User> selected_users = new List<User>();
+            for (int i = 0; i < cb_schedule_meeting_members.CheckedIndices.Count; i++)
+            {
+                selected_users.Add((User) cb_schedule_meeting_members.CheckedItems[i]);
+            }
+            
+
+           
+
+            lb_schedule_meeting_availability.Items.Clear();
+            while (start_time < end_time)
+            {
+                // add block if all selected users are available
+                if (selected_users.All(u => u.EventsWithinDate(start_time,
+                    start_time + timespan).Count == 0))
+                {
+                    lb_schedule_meeting_availability.Items.Add(start_time);
+                }
+
+                // increment next block
+                start_time += (TimeSpan) lb_schedule_meeting_timespan.SelectedItem;
+            }
+            
+
+        }
+
+
+        private void btn_schedule_meeting_back_Click(object sender, EventArgs e)
+        {
+            GoToMainCalendarPanel();
+        }
+
+        private void cb_schedule_meeting_members_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillPotentialScheduledMeetingTimes();
+        }
+
+        private void lb_schedule_meeting_timespan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillPotentialScheduledMeetingTimes();
+        }
+
+        private void dt_schedule_meeting_start_ValueChanged(object sender, EventArgs e)
+        {
+            FillPotentialScheduledMeetingTimes();
+        }
+
+        private void dt_schedule_meeting_end_ValueChanged(object sender, EventArgs e)
+        {
+            FillPotentialScheduledMeetingTimes();
+        }
+
+        private void cb_schedule_meeting_members_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            FillPotentialScheduledMeetingTimes();
+        }
+
+        private void btn_schedule_meeting_confirm_Click(object sender, EventArgs e)
+        {
+            // first check for valid start and end time
+            
+            if (lb_schedule_meeting_availability.SelectedIndex == -1)
+            {
+                System.Windows.Forms.MessageBox.Show("Please select a valid time");
+                return;
+            }
+
+            TimeSpan timespan = (TimeSpan)lb_schedule_meeting_timespan.SelectedItem;
+
+            // create an event from the data filled in
+            // WARNING: SQL injection very likely possible
+            Event to_add = new Event(
+                tb_schedule_meeting_title.Text,
+                tb_schedule_meeting_details.Text,
+                (DateTime)lb_schedule_meeting_availability.SelectedItem,
+                (DateTime)lb_schedule_meeting_availability.SelectedItem + timespan
+                );
+
+            // need to sync first so we establish an id for later
+            to_add.SyncToDB(conn);
+
+            // adding a participant syncs the event to the DB as well
+            // would like to simplify this into a lambda function
+            for (int i = 0; i < cb_schedule_meeting_members.CheckedItems.Count; i++)
+            {
+                to_add.AddParticipant(conn, (User)cb_schedule_meeting_members.CheckedItems[i]);
+            }
+
+            // go back to main menu
+            GoToMainCalendarPanel();
         }
     }
 }
